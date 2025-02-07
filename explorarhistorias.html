@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explorar Histórias - Pesadelo Real</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Explorar Histórias</h2>
+        <input type="text" id="pesquisa" placeholder="Buscar histórias...">
+        <div id="lista-historias">
+            <!-- As histórias serão carregadas aqui dinamicamente -->
+        </div>
+    </div>
+    <script>
+        document.getElementById('pesquisa').addEventListener('input', function() {
+            let termo = this.value.toLowerCase();
+            let historias = document.querySelectorAll('.historia');
+            historias.forEach(historia => {
+                let titulo = historia.querySelector('h3').innerText.toLowerCase();
+                historia.style.display = titulo.includes(termo) ? 'block' : 'none';
+            });
+        });
+    </script>
+</body>
+</html>

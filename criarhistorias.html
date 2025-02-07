@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Histórias - Pesadelo Real</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Criar História</h2>
+        <form action="bancodedados.py" method="POST">
+            <label for="titulo">Título:</label>
+            <input type="text" id="titulo" name="titulo" required>
+            
+            <label for="conteudo">Conteúdo:</label>
+            <textarea id="conteudo" name="conteudo" rows="10" required></textarea>
+            
+            <button type="submit">Publicar História</button>
+        </form>
+        <p><a href="explorarhistorias.html">Explorar histórias</a></p>
+    </div>
+</body>
+</html>

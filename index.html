@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesadelo Real</title>
+    <link rel="stylesheet" href="estilo.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #111;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        header {
+            background-color: #222;
+            padding: 20px;
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
+        }
+
+        header h1 {
+            color: #ff0000;
+            margin: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ff0000;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #222;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+        }
+
+        .container h2 {
+            color: #ff0000;
+            margin-bottom: 20px;
+        }
+
+        .eventos-destaque {
+            margin-top: 30px;
+        }
+
+        .evento {
+            background-color: #333;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            box-shadow: 0 0 8px rgba(255, 0, 0, 0.7);
+        }
+
+        .evento h3 {
+            color: #ff0000;
+            margin: 0;
+        }
+
+        .evento p {
+            color: #fff;
+        }
+
+        .evento p strong {
+            color: #ff0000;
+        }
+
+        .btn-cta {
+            display: inline-block;
+            background-color: #ff0000;
+            color: #fff;
+            padding: 12px 20px;
+            font-size: 18px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
+
+        .btn-cta:hover {
+            background-color: #cc0000;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Pesadelo Real</h1>
+        <nav>
+            <ul>
+                <li><a href="cadastro.html">Cadastro</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="explorarhistorias.html">Explorar Histórias</a></li>
+                <li><a href="eventos.html">Eventos</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="container">
+        <h2>Bem-vindo ao Pesadelo Real</h2>
+        <p>Explore histórias de terror, crie as suas próprias e participe de eventos imersivos que vão te arrepiar!</p>
+        
+        <div class="eventos-destaque">
+            <h3>Eventos Próximos</h3>
+            <div id="lista-eventos">
+                <!-- Os eventos serão carregados aqui dinamicamente -->
+            </div>
+        </div>
+
+        <a href="explorarhistorias.html" class="btn-cta">Explorar Histórias</a>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let eventos = [
+                {titulo: "Noite de Terror", data: "10/03/2025", descricao: "Uma experiência imersiva assustadora."},
+                {titulo: "Escape Room Sombrio", data: "25/03/2025", descricao: "Desafios aterrorizantes para sobreviver."}
+            ];
+            let lista = document.getElementById("lista-eventos");
+            eventos.forEach(evento => {
+                let div = document.createElement("div");
+                div.classList.add("evento");
+                div.innerHTML = `<h3>${evento.titulo}</h3><p><strong>Data:</strong> ${evento.data}</p><p>${evento.descricao}</p>`;
+                lista.appendChild(div);
+            });
+        });
+    </script>
+</body>
+</html>

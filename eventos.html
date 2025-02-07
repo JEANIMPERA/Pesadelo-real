@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos - Pesadelo Real</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Próximos Eventos</h2>
+        <div id="lista-eventos">
+            <!-- Os eventos serão carregados aqui dinamicamente -->
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let eventos = [
+                {titulo: "Noite de Terror", data: "10/03/2025", descricao: "Uma experiência imersiva assustadora."},
+                {titulo: "Escape Room Sombrio", data: "25/03/2025", descricao: "Desafios aterrorizantes para sobreviver."}
+            ];
+            let lista = document.getElementById("lista-eventos");
+            eventos.forEach(evento => {
+                let div = document.createElement("div");
+                div.classList.add("evento");
+                div.innerHTML = `<h3>${evento.titulo}</h3><p><strong>Data:</strong> ${evento.data}</p><p>${evento.descricao}</p>`;
+                lista.appendChild(div);
+            });
+        });
+    </script>
+</body>
+</html>
